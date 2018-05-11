@@ -1,6 +1,6 @@
-function [U, S] = ApellidosNombrepca(X)
-%APELLIDOSNOMBREPCA Run principal component analysis on the dataset X
-%   [U, S, X] = ApellidosNombrepca(X) computes eigenvectors of the covariance matrix of X
+function [U, S] = DiazGarciaJoseAngelpca(X)
+%DIAZGARCIAJOSEANGELPCA Run principal component analysis on the dataset X
+%   [U, S, X] = DiazGarciaJoseAngelpca(X) computes eigenvectors of the covariance matrix of X
 %   Returns the eigenvectors U, the eigenvalues (on diagonal) in S
 %
 
@@ -24,5 +24,9 @@ S = zeros(n);
 
 
 % =========================================================================
+
+Sigma = cov(X);
+
+[U,S]=svd(Sigma);
 
 end

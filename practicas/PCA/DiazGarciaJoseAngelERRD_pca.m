@@ -32,7 +32,7 @@ fprintf('Visualizing example dataset for PCA.\n\n');
 
 %  The following command loads the dataset. You should now have the 
 %  variable X in your environment
-load ('ERRDdata1.mat');
+  load ("ERRDdata1.mat");
 
 % TEN CUIDAO, OBSERVA QUE CADA EJEMPLO ESTÁ ALMACENADO COMO UNA FILA
 % Y NO COMO UNA COLUMNA COMO HABIAMOS UTILIZADO EN CLASE
@@ -52,7 +52,7 @@ fprintf('\nRunning PCA on example dataset.\n\n');
 [X_norm, mu, sigma] = featureNormalize(X);
 
 %  Run PCA
-[U, S] = ApellidosNombrepca(X_norm);
+[U, S] = DiazGarciaJoseAngelpca(X_norm);
 
 %  Compute mu, the mean of the each feature
 
