@@ -58,6 +58,9 @@ fprintf('\nRunning PCA on example dataset.\n\n');
 
 %  Draw the eigenvectors centered at mean of data. These lines show the
 %  directions of maximum variations in the dataset.
+plot(X(:, 1), X(:, 2), 'bo');
+axis([-1 7 -1 8]); axis square
+
 hold on;
 drawLine(mu, mu + 1.5 * S(1,1) * U(:,1)', '-k', 'LineWidth', 2);
 drawLine(mu, mu + 1.5 * S(2,2) * U(:,2)', '-k', 'LineWidth', 2);
@@ -84,17 +87,17 @@ fprintf('\nDimension reduction on example dataset.\n\n');
 plot(X_norm(:, 1), X_norm(:, 2), 'bo');
 axis([-4 3 -4 3]); axis square
 
-%  You should complete the code in ApellidosNombreprojectData.m
+%  You should complete the code in DiazGarciaJoseAngelprojectData.m
 %  Project the data onto K = 1 dimension
 K = 1;
-Z = ApellidosNombreprojectData(X_norm, U, K);
+Z = DiazGarciaJoseAngelprojectData(X_norm, U, K);
 fprintf('Projection of the first example: %f\n', Z(1));
 fprintf('\n(this value should be about 1.481274)\n\n');
 
-%  You should complete the code in ApellidosNombrerecoverData.m
+%  You should complete the code in DiazGarciaJoseAngelrecoverData.m
 %  Project the data onto K = 1 dimension
 
-X_rec  = ApellidosNombrerecoverData(Z, U, K);
+X_rec  = DiazGarciaJoseAngelrecoverData(Z, U, K);
 fprintf('Approximation of the first example: %f %f\n', X_rec(1, 1), X_rec(1, 2));
 fprintf('\n(this value should be about  -1.047419 -1.047419)\n\n');
 
@@ -132,7 +135,7 @@ fprintf(['\nRunning PCA on face dataset.\n' ...
 [X_norm, mu, sigma] = featureNormalize(X);
 
 %  Run PCA
-[U, S] = ApellidosNombrepca(X_norm);
+[U, S] = DiazGarciaJoseAngelpca(X_norm);
 
 %  Visualize the top 36 eigenvectors found
 displayData(U(:, 1:36)');
@@ -146,7 +149,7 @@ displayData(U(:, 1:36)');
 fprintf('\nDimension reduction for face dataset.\n\n');
 
 K = 100;
-Z = ApellidosNombreprojectData(X_norm, U, K);
+Z = DiazGarciaJoseAngelprojectData(X_norm, U, K);
 
 fprintf('The projected data Z has a size of: ')
 fprintf('%d ', size(Z));
@@ -161,7 +164,7 @@ fprintf('%d ', size(Z));
 fprintf('\nVisualizing the projected (reduced dimension) faces.\n\n');
 
 K = 100;
-X_rec  = ApellidosNombrerecoverData(Z, U, K);
+X_rec  = DiazGarciaJoseAngelrecoverData(Z, U, K);
 
 % Display normalized data
 subplot(1, 2, 1);

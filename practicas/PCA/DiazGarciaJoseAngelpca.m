@@ -25,8 +25,10 @@ S = zeros(n);
 
 % =========================================================================
 
+%Creamos la matriz de covarianza
 Sigma = cov(X);
 
+%Asignamos los calroes de la función svd a la estructura de salida
 [U,S]=svd(Sigma);
 
 end

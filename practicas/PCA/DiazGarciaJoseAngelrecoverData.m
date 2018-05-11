@@ -1,7 +1,7 @@
-function X_rec = ApellidosNombrerecoverData(Z, U, K)
-%APELLIDOSNOMBRERECOVERDATA Recovers an approximation of the original data when using the 
+function X_rec = DiazGarciaJoseAngelrecoverData(Z, U, K)
+%DIAZGARCIAJOSEANGELRECOVERDATA Recovers an approximation of the original data when using the 
 %projected data
-%   X_rec = APELLIDOSNOMBRERECOVERDATA(Z, U, K) recovers an approximation the 
+%   X_rec = DIAZGARCIAJOSEANGELRECOVERDATA(Z, U, K) recovers an approximation the 
 %   original data that has been reduced to K dimensions. It returns the
 %   approximate reconstruction in X_rec.
 %
@@ -21,8 +21,10 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %               Notice that U(j, 1:K) is a row vector.
 %               
 
-
-% INCLUYE TU CÓDIGO AQUÍ
+U_reduce = U(:, 1:K);
+for i = 1:size(Z, 1)
+  X_rec(i, :) = (U_reduce*Z(i, :)')';
+end
 
 % =============================================================
 

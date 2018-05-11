@@ -1,7 +1,7 @@
-function Z = ApellidosNombreprojectData(X, U, K)
-%ApellidosNombrePROJECTDATA Computes the reduced data representation when projecting only 
+function Z = DiazGarciaJoseAngelprojectData(X, U, K)
+%DIAZGARCIAJOSEANGELPROJECTDATA Computes the reduced data representation when projecting only 
 %on to the top k eigenvectors
-%   Z = ApellidosNombreprojectData(X, U, K) computes the projection of 
+%   Z = DiazGarciaJoseAngelprojectData(X, U, K) computes the projection of 
 %   the normalized inputs X into the reduced dimensional space spanned by
 %   the first K columns of U. It returns the projected examples in Z.
 %
@@ -18,7 +18,10 @@ Z = zeros(size(X, 1), K);
 %                    projection_k = x' * U(:, k);
 %
 
-% INCLUYE TU CÓDIGO AQUÍ
+U_reduce = U(:, 1:K);
+for i = 1: size(X, 1)
+  Z(i, :) = (U_reduce'*X(i, :)')';
+end
 
 % =============================================================
 
